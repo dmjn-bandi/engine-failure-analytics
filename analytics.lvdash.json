@@ -5,14 +5,18 @@
       "displayName": "gold_data",
       "queryLines": [
         "SELECT * FROM workspace.default.gold_data"
-      ]
+      ],
+      "catalog": "workspace",
+      "schema": "default"
     },
     {
       "name": "95537d32",
       "displayName": "mi_matrix",
       "queryLines": [
         "SELECT * FROM workspace.default.mi_matrix"
-      ]
+      ],
+      "catalog": "workspace",
+      "schema": "default"
     }
   ],
   "pages": [
