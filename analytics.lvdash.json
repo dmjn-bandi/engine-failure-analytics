@@ -1,0 +1,1618 @@
+{
+  "datasets": [
+    {
+      "name": "50448f13",
+      "displayName": "gold_data",
+      "queryLines": [
+        "SELECT * FROM workspace.default.gold_data"
+      ]
+    },
+    {
+      "name": "95537d32",
+      "displayName": "mi_matrix",
+      "queryLines": [
+        "SELECT * FROM workspace.default.mi_matrix"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "ef7ff3ef",
+      "displayName": "stats",
+      "layout": [
+        {
+          "widget": {
+            "name": "high-breakdown-risk-count",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "chance_of_breakdown",
+                      "expression": "`chance_of_breakdown`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution of Engines by Chance of Breakdown"
+              },
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "count(*)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "hideTitle": false,
+                    "title": "Number of Engines"
+                  },
+                  "format": {
+                    "type": "number-plain",
+                    "abbreviation": "compact",
+                    "decimalPlaces": {
+                      "type": "max",
+                      "places": 2
+                    }
+                  }
+                },
+                "color": {
+                  "fieldName": "chance_of_breakdown",
+                  "legend": {
+                    "title": "Chance of Breakdown"
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "mappings": [
+                      {
+                        "value": true,
+                        "color": "#E76D60"
+                      },
+                      {
+                        "value": false,
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 3
+                        }
+                      },
+                      {
+                        "value": "less",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 3
+                        }
+                      },
+                      {
+                        "value": "more",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 4
+                        }
+                      },
+                      {
+                        "value": "high",
+                        "color": "#B81A39"
+                      },
+                      {
+                        "value": "low",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 1
+                        }
+                      }
+                    ],
+                    "sort": {
+                      "by": "angle-reversed"
+                    }
+                  }
+                },
+                "label": {
+                  "show": true,
+                  "text": {
+                    "fieldName": "count(*)"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 31,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "distribution-of-combustion-issue-types",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(combustion_issue_type)",
+                      "expression": "COUNT(`combustion_issue_type`)"
+                    },
+                    {
+                      "name": "combustion_issue_type",
+                      "expression": "`combustion_issue_type`"
+                    },
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution of Engines by Combustion Issue Type"
+              },
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "count(combustion_issue_type)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "hideTitle": false,
+                    "title": "Number of Engines"
+                  }
+                },
+                "color": {
+                  "fieldName": "combustion_issue_type",
+                  "legend": {
+                    "title": "Combustion Issue Types"
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "angle-reversed"
+                    },
+                    "mappings": [
+                      {
+                        "value": "non-symptomatic",
+                        "color": "#A063B1"
+                      }
+                    ]
+                  }
+                },
+                "label": {
+                  "show": true,
+                  "text": {
+                    "fieldName": "count(*)"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 7,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "distribution-resting-results-after-operation",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "resting_analysis_results",
+                      "expression": "`resting_analysis_results`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "showDescription": false,
+                "title": "Distribution of Engines by Resting Analysis Results After Operation"
+              },
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "count(*)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "title": "Number of Engines"
+                  }
+                },
+                "color": {
+                  "fieldName": "resting_analysis_results",
+                  "legend": {
+                    "title": "Resting Analysis Results"
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "custom-order",
+                      "orderedValues": [
+                        "critical",
+                        "abnormal",
+                        "normal"
+                      ]
+                    },
+                    "mappings": [
+                      {
+                        "value": "abnormal",
+                        "color": "#E26161"
+                      },
+                      {
+                        "value": "normal",
+                        "color": "#FFFFFF"
+                      },
+                      {
+                        "value": "critical",
+                        "color": "#CC2513"
+                      }
+                    ]
+                  }
+                },
+                "label": {
+                  "show": true,
+                  "text": {
+                    "fieldName": "count(*)"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 19,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "8e126e67",
+            "multilineTextboxSpec": {
+              "lines": [
+                "### Legend: Abbreviation Guide\n",
+                "---\n",
+                "* **Op. Hours:** Operating Hours\n",
+                "* **BMEP:** Break Mean Effective Pressure\n",
+                "* **Nat. Gas. Impur.:** Natural Gas Impurities (nmol)\n",
+                "* **Max. RPM:** Maximum Rotations Per Minute\n",
+                "* **No. of Unpl. Ev.:** Number of Unplanned Events\n",
+                "* **No. of Tur. Charg.:** Number of Turbo Chargers"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 78,
+            "width": 4,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "f47f4769",
+            "multilineTextboxSpec": {
+              "lines": [
+                "<span style=\"text-align:center;display:block\"><span style=\"font-size:25px\">**Feature Distributions Overview**</span></span>"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "distribution-engines-operating-hours",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "count(operating_hours)",
+                      "expression": "COUNT(`operating_hours`)"
+                    },
+                    {
+                      "name": "bin(operating_hours, binWidth=5000)",
+                      "expression": "BIN_FLOOR(`operating_hours`, 5000)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution of Engines by Operating Hours"
+              },
+              "widgetType": "histogram",
+              "encodings": {
+                "x": {
+                  "fieldName": "bin(operating_hours, binWidth=5000)",
+                  "axis": {
+                    "title": "Operating Hours"
+                  },
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "y": {
+                  "fieldName": "count(*)",
+                  "axis": {
+                    "title": "Number of Engines"
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "fn": {
+                      "type": "symlog"
+                    }
+                  }
+                },
+                "color": {
+                  "fieldName": "count(*)",
+                  "legend": {
+                    "hide": true
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "colorRamp": {
+                      "mode": "scheme",
+                      "scheme": "greenblue"
+                    }
+                  }
+                },
+                "label": {
+                  "show": true,
+                  "text": {
+                    "fieldName": "count(operating_hours)"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "distribution-of-engines",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "bin(break_mean_effective_pressure, binWidth=10)",
+                      "expression": "BIN_FLOOR(`break_mean_effective_pressure`, 10)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution of Engines by Break Mean Effective Pressure",
+                "showDescription": true,
+                "description": "Break Mean Effective Pressure (BMEP) is the average preassure forcing the pistions inside an engine down"
+              },
+              "widgetType": "histogram",
+              "encodings": {
+                "x": {
+                  "fieldName": "bin(break_mean_effective_pressure, binWidth=10)",
+                  "axis": {
+                    "title": "Break Mean Effective Pressure"
+                  },
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "y": {
+                  "fieldName": "count(*)",
+                  "axis": {
+                    "title": "Number of Engines"
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "fn": {
+                      "type": "symlog"
+                    }
+                  }
+                },
+                "color": {
+                  "fieldName": "count(*)",
+                  "legend": {
+                    "hide": true
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "colorRamp": {
+                      "mode": "scheme",
+                      "scheme": "greenblue"
+                    }
+                  }
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 7,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "distribution-engines-break-mean-effective-pressure",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "bin(natural_gas_impurities_nmol, binWidth=100)",
+                      "expression": "BIN_FLOOR(`natural_gas_impurities_nmol`, 100)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution of Engines by Natural Gas Impurities",
+                "showDescription": true,
+                "description": "Natural gas impurities are measured in nmol"
+              },
+              "widgetType": "histogram",
+              "encodings": {
+                "x": {
+                  "fieldName": "bin(natural_gas_impurities_nmol, binWidth=100)",
+                  "axis": {
+                    "title": "Natural Gas Impurities (nmol)"
+                  },
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "y": {
+                  "fieldName": "count(*)",
+                  "axis": {
+                    "title": "Number of Engines"
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "fn": {
+                      "type": "symlog"
+                    }
+                  }
+                },
+                "color": {
+                  "fieldName": "count(*)",
+                  "legend": {
+                    "hide": true
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "colorRamp": {
+                      "mode": "scheme",
+                      "scheme": "greenblue"
+                    }
+                  }
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 13,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "distribution-engines1",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "had_past_damages",
+                      "expression": "`had_past_damages`"
+                    },
+                    {
+                      "name": "count(had_past_damages)",
+                      "expression": "COUNT(`had_past_damages`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution of Engines by Past Damages"
+              },
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "count(*)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "title": "Number of Engines"
+                  }
+                },
+                "color": {
+                  "fieldName": "had_past_damages",
+                  "legend": {
+                    "title": "Had past damages"
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "angle"
+                    },
+                    "mappings": [
+                      {
+                        "value": false,
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 4
+                        }
+                      },
+                      {
+                        "value": true,
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 3
+                        }
+                      }
+                    ]
+                  }
+                },
+                "label": {
+                  "show": true,
+                  "text": {
+                    "fieldName": "count(had_past_damages)"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 13,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "distribution-engines2",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "bin(maximum_rotations_per_minute, binWidth=100)",
+                      "expression": "BIN_FLOOR(`maximum_rotations_per_minute`, 100)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution of Engines by Maximum Rotations Per Minute Achieved"
+              },
+              "widgetType": "histogram",
+              "encodings": {
+                "x": {
+                  "fieldName": "bin(maximum_rotations_per_minute, binWidth=100)",
+                  "axis": {
+                    "title": "Maximum Rotations Per Minute Achieved"
+                  },
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "y": {
+                  "fieldName": "count(*)",
+                  "axis": {
+                    "title": "Number of Engines"
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "fn": {
+                      "type": "symlog"
+                    }
+                  }
+                },
+                "color": {
+                  "fieldName": "count(*)",
+                  "legend": {
+                    "hide": true
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "colorRamp": {
+                      "mode": "scheme",
+                      "scheme": "greenblue"
+                    }
+                  }
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 19,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "distribution-engines-full-load-issues",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "had_full_load_issues",
+                      "expression": "`had_full_load_issues`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution of Engines by Full Load Issues",
+                "showDescription": true,
+                "description": "Full load issues are issues that were induced due to full load operation"
+              },
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "count(*)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "title": "Number of Engines"
+                  }
+                },
+                "color": {
+                  "fieldName": "had_full_load_issues",
+                  "legend": {
+                    "title": "Had Full Load Issues"
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "mappings": [
+                      {
+                        "value": true,
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 3
+                        }
+                      },
+                      {
+                        "value": false,
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 4
+                        }
+                      }
+                    ],
+                    "sort": {
+                      "by": "angle"
+                    }
+                  }
+                },
+                "label": {
+                  "show": true,
+                  "text": {
+                    "fieldName": "count(*)"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 25,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "distribution-engines-unplanned-events",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "bin(number_of_unplanned_events, binWidth=5)",
+                      "expression": "BIN_FLOOR(`number_of_unplanned_events`, 5)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution of Engines by Number of Unplanned Events"
+              },
+              "widgetType": "histogram",
+              "encodings": {
+                "x": {
+                  "fieldName": "bin(number_of_unplanned_events, binWidth=5)",
+                  "axis": {
+                    "title": "Number of Unplanned Events"
+                  },
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "y": {
+                  "fieldName": "count(*)",
+                  "axis": {
+                    "title": "Number of Engines"
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "fn": {
+                      "type": "symlog"
+                    }
+                  }
+                },
+                "color": {
+                  "fieldName": "count(*)",
+                  "legend": {
+                    "hide": true
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "colorRamp": {
+                      "mode": "scheme",
+                      "scheme": "greenblue"
+                    }
+                  }
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 25,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "number-of-installed-turbo-chargers",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "number_of_turbo_chargers",
+                      "expression": "`number_of_turbo_chargers`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution of Engines by Number of  Installed Turbo Chargers"
+              },
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "number_of_turbo_chargers",
+                  "axis": {
+                    "hideGrid": true,
+                    "title": "Number of Installed Turbo Chargers"
+                  },
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "y": {
+                  "fieldName": "count(*)",
+                  "displayName": "Number of Engines",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "color": {
+                  "fieldName": "count(*)",
+                  "legend": {
+                    "hide": true
+                  },
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 31,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "distribution-engines-piston-material",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "piston_material",
+                      "expression": "`piston_material`"
+                    },
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "Distribution of Engines by Piston Material"
+              },
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "piston_material",
+                  "axis": {
+                    "title": "Piston Material",
+                    "hideGrid": true
+                  },
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "fieldName": "count(*)",
+                  "axis": {
+                    "title": "Number of Engines"
+                  },
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "color": {
+                  "fieldName": "piston_material",
+                  "legend": {
+                    "hide": true
+                  },
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 1,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "1854cb83",
+            "multilineTextboxSpec": {
+              "lines": [
+                "#### <span style=\"text-align:center;display:block\"><span style=\"font-size:25px\">**Feature Correlations**</span></span>"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 37,
+            "width": 12,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "c246e9ca",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "combustion_issue_type",
+                      "expression": "`combustion_issue_type`"
+                    },
+                    {
+                      "name": "chance_of_breakdown",
+                      "expression": "`chance_of_breakdown`"
+                    },
+                    {
+                      "name": "had_full_load_issues",
+                      "expression": "`had_full_load_issues`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "facet": {
+                "type": "wrap",
+                "fieldName": "had_full_load_issues",
+                "scale": {
+                  "type": "categorical"
+                }
+              },
+              "version": 3,
+              "widgetType": "heatmap",
+              "encodings": {
+                "x": {
+                  "fieldName": "combustion_issue_type",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "fieldName": "chance_of_breakdown",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "color": {
+                  "fieldName": "count(*)",
+                  "legend": {
+                    "hide": true
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "colorRamp": {
+                      "mode": "scheme",
+                      "scheme": "redblue"
+                    },
+                    "reverse": true
+                  }
+                },
+                "label": {
+                  "show": true,
+                  "text": {
+                    "fieldName": "count(*)"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 44,
+            "width": 12,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "aa8fb377",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "avg(number_of_unplanned_events)",
+                      "expression": "AVG(`number_of_unplanned_events`)"
+                    },
+                    {
+                      "name": "number_of_turbo_chargers",
+                      "expression": "`number_of_turbo_chargers`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "number_of_turbo_chargers",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "y": {
+                  "fieldName": "avg(number_of_unplanned_events)",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "color": {
+                  "fieldName": "avg(number_of_unplanned_events)",
+                  "legend": {
+                    "hide": true
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "colorRamp": {
+                      "mode": "scheme",
+                      "scheme": "reds"
+                    }
+                  }
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 5,
+            "y": 50,
+            "width": 7,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "52c631a2",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "number_of_turbo_chargers",
+                      "expression": "`number_of_turbo_chargers`"
+                    },
+                    {
+                      "name": "min(break_mean_effective_pressure)",
+                      "expression": "MIN(`break_mean_effective_pressure`)"
+                    },
+                    {
+                      "name": "q1(break_mean_effective_pressure)",
+                      "expression": "PERCENTILE(`break_mean_effective_pressure`, 0.25)"
+                    },
+                    {
+                      "name": "median(break_mean_effective_pressure)",
+                      "expression": "MEDIAN(`break_mean_effective_pressure`)"
+                    },
+                    {
+                      "name": "q3(break_mean_effective_pressure)",
+                      "expression": "PERCENTILE(`break_mean_effective_pressure`, 0.75)"
+                    },
+                    {
+                      "name": "max(break_mean_effective_pressure)",
+                      "expression": "MAX(`break_mean_effective_pressure`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "box",
+              "encodings": {
+                "x": {
+                  "fieldName": "number_of_turbo_chargers",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "whiskerStart": {
+                    "fieldName": "min(break_mean_effective_pressure)"
+                  },
+                  "boxStart": {
+                    "fieldName": "q1(break_mean_effective_pressure)"
+                  },
+                  "boxMid": {
+                    "fieldName": "median(break_mean_effective_pressure)"
+                  },
+                  "boxEnd": {
+                    "fieldName": "q3(break_mean_effective_pressure)"
+                  },
+                  "whiskerEnd": {
+                    "fieldName": "max(break_mean_effective_pressure)"
+                  },
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 6,
+            "y": 56,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "c624a338",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    },
+                    {
+                      "name": "combustion_issue_type",
+                      "expression": "`combustion_issue_type`"
+                    },
+                    {
+                      "name": "chance_of_breakdown",
+                      "expression": "`chance_of_breakdown`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "heatmap",
+              "encodings": {
+                "x": {
+                  "fieldName": "combustion_issue_type",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "fieldName": "chance_of_breakdown",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "color": {
+                  "fieldName": "count(*)",
+                  "format": {
+                    "type": "number-plain",
+                    "abbreviation": "compact",
+                    "decimalPlaces": {
+                      "type": "max",
+                      "places": 2
+                    },
+                    "hideGroupSeparator": false
+                  },
+                  "legend": {
+                    "hide": true
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "colorRamp": {
+                      "mode": "scheme",
+                      "scheme": "redblue"
+                    },
+                    "reverse": true
+                  }
+                },
+                "label": {
+                  "show": true,
+                  "text": {
+                    "fieldName": "count(*)"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 5,
+            "y": 38,
+            "width": 7,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "916f9c1a",
+            "multilineTextboxSpec": {
+              "lines": [
+                ""
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 38,
+            "width": 5,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "8901c62f",
+            "multilineTextboxSpec": {
+              "lines": [
+                ""
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 50,
+            "width": 5,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "682eb81c",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "50448f13",
+                  "fields": [
+                    {
+                      "name": "number_of_turbo_chargers",
+                      "expression": "`number_of_turbo_chargers`"
+                    },
+                    {
+                      "name": "min(maximum_rotations_per_minute)",
+                      "expression": "MIN(`maximum_rotations_per_minute`)"
+                    },
+                    {
+                      "name": "q1(maximum_rotations_per_minute)",
+                      "expression": "PERCENTILE(`maximum_rotations_per_minute`, 0.25)"
+                    },
+                    {
+                      "name": "median(maximum_rotations_per_minute)",
+                      "expression": "MEDIAN(`maximum_rotations_per_minute`)"
+                    },
+                    {
+                      "name": "q3(maximum_rotations_per_minute)",
+                      "expression": "PERCENTILE(`maximum_rotations_per_minute`, 0.75)"
+                    },
+                    {
+                      "name": "max(maximum_rotations_per_minute)",
+                      "expression": "MAX(`maximum_rotations_per_minute`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "box",
+              "encodings": {
+                "x": {
+                  "fieldName": "number_of_turbo_chargers",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "whiskerStart": {
+                    "fieldName": "min(maximum_rotations_per_minute)"
+                  },
+                  "boxStart": {
+                    "fieldName": "q1(maximum_rotations_per_minute)"
+                  },
+                  "boxMid": {
+                    "fieldName": "median(maximum_rotations_per_minute)"
+                  },
+                  "boxEnd": {
+                    "fieldName": "q3(maximum_rotations_per_minute)"
+                  },
+                  "whiskerEnd": {
+                    "fieldName": "max(maximum_rotations_per_minute)"
+                  },
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 56,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "caec901b",
+            "multilineTextboxSpec": {
+              "lines": [
+                ""
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 62,
+            "width": 12,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "ab4dba38",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "95537d32",
+                  "fields": [
+                    {
+                      "name": "nmi",
+                      "expression": "`nmi`"
+                    },
+                    {
+                      "name": "x",
+                      "expression": "`x`"
+                    },
+                    {
+                      "name": "y",
+                      "expression": "`y`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "heatmap",
+              "encodings": {
+                "x": {
+                  "fieldName": "x",
+                  "axis": {
+                    "hideTitle": true,
+                    "labelAngle": 90
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "custom-order",
+                      "orderedValues": [
+                        "Bd. Chance",
+                        "Tur. Charg. No.",
+                        "Unpl. Ev. No.",
+                        "Full Load Iss.",
+                        "Max. RPM.",
+                        "Rest. An. Res.",
+                        "Past. Dmg.",
+                        "Nat. Gas. Imp.",
+                        "BMEP",
+                        "Comb. Iss. Type",
+                        "Pist. Mat.",
+                        "Op. Hours"
+                      ]
+                    }
+                  }
+                },
+                "y": {
+                  "fieldName": "y",
+                  "axis": {
+                    "hideTitle": true
+                  },
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "custom-order",
+                      "orderedValues": [
+                        "Op. Hours",
+                        "Pist. Mat.",
+                        "Comb. Iss. Type",
+                        "BMEP",
+                        "Nat. Gas. Imp.",
+                        "Past. Dmg.",
+                        "Rest. An. Res.",
+                        "Max. RPM.",
+                        "Full Load Iss.",
+                        "Unpl. Ev. No.",
+                        "Tur. Charg. No.",
+                        "Bd. Chance"
+                      ]
+                    }
+                  }
+                },
+                "color": {
+                  "fieldName": "nmi",
+                  "legend": {
+                    "hide": true
+                  },
+                  "scale": {
+                    "type": "quantitative",
+                    "colorRamp": {
+                      "mode": "scheme",
+                      "scheme": "redblue"
+                    },
+                    "reverse": true
+                  }
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 63,
+            "width": 12,
+            "height": 15
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}
