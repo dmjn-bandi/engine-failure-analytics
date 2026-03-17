@@ -66,7 +66,8 @@
                       "type": "max",
                       "places": 2
                     }
-                  }
+                  },
+                  "displayName": "Number of Engines"
                 },
                 "color": {
                   "fieldName": "chance_of_breakdown",
@@ -176,7 +177,8 @@
                   "axis": {
                     "hideTitle": false,
                     "title": "Number of Engines"
-                  }
+                  },
+                  "displayName": "Number of Engines"
                 },
                 "color": {
                   "fieldName": "combustion_issue_type",
@@ -250,7 +252,8 @@
                   },
                   "axis": {
                     "title": "Number of Engines"
-                  }
+                  },
+                  "displayName": "Number of Engines"
                 },
                 "color": {
                   "fieldName": "resting_analysis_results",
@@ -301,33 +304,10 @@
         },
         {
           "widget": {
-            "name": "8e126e67",
-            "multilineTextboxSpec": {
-              "lines": [
-                "### Legend: Abbreviation Guide\n",
-                "---\n",
-                "* **Op. Hours:** Operating Hours\n",
-                "* **BMEP:** Break Mean Effective Pressure\n",
-                "* **Nat. Gas. Impur.:** Natural Gas Impurities (nmol)\n",
-                "* **Max. RPM:** Maximum Rotations Per Minute\n",
-                "* **No. of Unpl. Ev.:** Number of Unplanned Events\n",
-                "* **No. of Tur. Charg.:** Number of Turbo Chargers"
-              ]
-            }
-          },
-          "position": {
-            "x": 0,
-            "y": 78,
-            "width": 4,
-            "height": 5
-          }
-        },
-        {
-          "widget": {
             "name": "f47f4769",
             "multilineTextboxSpec": {
               "lines": [
-                "<span style=\"text-align:center;display:block\"><span style=\"font-size:25px\">**Feature Distributions Overview**</span></span>"
+                "#### <span style=\"text-align:center;display:block\"><span style=\"font-size:25px\">**Feature Distributions Overview**</span></span>"
               ]
             }
           },
@@ -386,6 +366,7 @@
                   "axis": {
                     "title": "Number of Engines"
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative",
                     "fn": {
@@ -396,8 +377,10 @@
                 "color": {
                   "fieldName": "count(*)",
                   "legend": {
-                    "hide": true
+                    "hide": true,
+                    "title": "Number of Engines"
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative",
                     "colorRamp": {
@@ -468,6 +451,7 @@
                   "axis": {
                     "title": "Number of Engines"
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative",
                     "fn": {
@@ -480,6 +464,7 @@
                   "legend": {
                     "hide": true
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative",
                     "colorRamp": {
@@ -547,6 +532,7 @@
                   "axis": {
                     "title": "Number of Engines"
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative",
                     "fn": {
@@ -559,6 +545,7 @@
                   "legend": {
                     "hide": true
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative",
                     "colorRamp": {
@@ -621,7 +608,8 @@
                   },
                   "axis": {
                     "title": "Number of Engines"
-                  }
+                  },
+                  "displayName": "Number of Engines"
                 },
                 "color": {
                   "fieldName": "had_past_damages",
@@ -711,6 +699,7 @@
                   "axis": {
                     "title": "Number of Engines"
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative",
                     "fn": {
@@ -723,6 +712,7 @@
                   "legend": {
                     "hide": true
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative",
                     "colorRamp": {
@@ -783,7 +773,8 @@
                   },
                   "axis": {
                     "title": "Number of Engines"
-                  }
+                  },
+                  "displayName": "Number of Engines"
                 },
                 "color": {
                   "fieldName": "had_full_load_issues",
@@ -873,6 +864,7 @@
                   "axis": {
                     "title": "Number of Engines"
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative",
                     "fn": {
@@ -885,6 +877,7 @@
                   "legend": {
                     "hide": true
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative",
                     "colorRamp": {
@@ -958,6 +951,7 @@
                   "legend": {
                     "hide": true
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative"
                   }
@@ -1020,6 +1014,7 @@
                   "axis": {
                     "title": "Number of Engines"
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative"
                   }
@@ -1051,7 +1046,7 @@
             "name": "1854cb83",
             "multilineTextboxSpec": {
               "lines": [
-                "#### <span style=\"text-align:center;display:block\"><span style=\"font-size:25px\">**Feature Correlations**</span></span>"
+                "#### <span style=\"text-align:center;display:block\"><span style=\"font-size:25px\">**Relationships Between Features**</span></span>"
               ]
             }
           },
@@ -1096,6 +1091,9 @@
               "facet": {
                 "type": "wrap",
                 "fieldName": "had_full_load_issues",
+                "header": {
+                  "title": "Had Full Load Issues"
+                },
                 "scale": {
                   "type": "categorical"
                 }
@@ -1105,12 +1103,14 @@
               "encodings": {
                 "x": {
                   "fieldName": "combustion_issue_type",
+                  "displayName": "Combustion Issue Type",
                   "scale": {
                     "type": "categorical"
                   }
                 },
                 "y": {
                   "fieldName": "chance_of_breakdown",
+                  "displayName": "Chance of Breakdown",
                   "scale": {
                     "type": "categorical"
                   }
@@ -1118,8 +1118,11 @@
                 "color": {
                   "fieldName": "count(*)",
                   "legend": {
-                    "hide": true
+                    "hide": true,
+                    "position": "top",
+                    "title": "Number of Engines"
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative",
                     "colorRamp": {
@@ -1140,9 +1143,9 @@
           },
           "position": {
             "x": 0,
-            "y": 44,
+            "y": 45,
             "width": 12,
-            "height": 6
+            "height": 7
           }
         },
         {
@@ -1173,12 +1176,17 @@
               "encodings": {
                 "x": {
                   "fieldName": "number_of_turbo_chargers",
+                  "displayName": "Number of Installed Turbo Chargers",
                   "scale": {
                     "type": "quantitative"
                   }
                 },
                 "y": {
                   "fieldName": "avg(number_of_unplanned_events)",
+                  "axis": {
+                    "title": "Average Number of Unplanned Events"
+                  },
+                  "displayName": "Average Number of Unplanned Events",
                   "scale": {
                     "type": "quantitative"
                   }
@@ -1186,8 +1194,10 @@
                 "color": {
                   "fieldName": "avg(number_of_unplanned_events)",
                   "legend": {
-                    "hide": true
+                    "hide": true,
+                    "position": "top"
                   },
+                  "displayName": "Average Number of Unplanned Events",
                   "scale": {
                     "type": "quantitative",
                     "colorRamp": {
@@ -1203,10 +1213,10 @@
             }
           },
           "position": {
-            "x": 5,
-            "y": 50,
-            "width": 7,
-            "height": 6
+            "x": 0,
+            "y": 53,
+            "width": 12,
+            "height": 8
           }
         },
         {
@@ -1253,6 +1263,7 @@
               "encodings": {
                 "x": {
                   "fieldName": "number_of_turbo_chargers",
+                  "displayName": "Number of Installed Turbo Chargers",
                   "scale": {
                     "type": "categorical"
                   }
@@ -1273,6 +1284,9 @@
                   "whiskerEnd": {
                     "fieldName": "max(break_mean_effective_pressure)"
                   },
+                  "axis": {
+                    "title": "BMEP"
+                  },
                   "scale": {
                     "type": "quantitative"
                   }
@@ -1282,7 +1296,7 @@
           },
           "position": {
             "x": 6,
-            "y": 56,
+            "y": 61,
             "width": 6,
             "height": 6
           }
@@ -1319,12 +1333,16 @@
               "encodings": {
                 "x": {
                   "fieldName": "combustion_issue_type",
+                  "axis": {
+                    "title": "Combustion Issue Type"
+                  },
                   "scale": {
                     "type": "categorical"
                   }
                 },
                 "y": {
                   "fieldName": "chance_of_breakdown",
+                  "displayName": "Chance of Breakdown",
                   "scale": {
                     "type": "categorical"
                   }
@@ -1341,8 +1359,11 @@
                     "hideGroupSeparator": false
                   },
                   "legend": {
-                    "hide": true
+                    "hide": true,
+                    "title": "Number of Engines",
+                    "position": "top"
                   },
+                  "displayName": "Number of Engines",
                   "scale": {
                     "type": "quantitative",
                     "colorRamp": {
@@ -1362,9 +1383,9 @@
             }
           },
           "position": {
-            "x": 5,
-            "y": 38,
-            "width": 7,
+            "x": 0,
+            "y": 39,
+            "width": 12,
             "height": 6
           }
         },
@@ -1373,15 +1394,15 @@
             "name": "916f9c1a",
             "multilineTextboxSpec": {
               "lines": [
-                ""
+                "## Relationships Between:<span style=\"font-size:24px\"> </span><span style=\"font-size:24px\">Chance of Breakdown, </span><span style=\"font-size:24px\">Combustion Issue Type, </span><span style=\"font-size:24px\">Full Load Issues</span>"
               ]
             }
           },
           "position": {
             "x": 0,
             "y": 38,
-            "width": 5,
-            "height": 6
+            "width": 12,
+            "height": 1
           }
         },
         {
@@ -1389,15 +1410,15 @@
             "name": "8901c62f",
             "multilineTextboxSpec": {
               "lines": [
-                ""
+                "## Relationships Between: Number of Unplanned Events, Number of Installed Turbo Chargers, Max. RPM Achieved and BMEP"
               ]
             }
           },
           "position": {
             "x": 0,
-            "y": 50,
-            "width": 5,
-            "height": 6
+            "y": 52,
+            "width": 12,
+            "height": 1
           }
         },
         {
@@ -1444,6 +1465,7 @@
               "encodings": {
                 "x": {
                   "fieldName": "number_of_turbo_chargers",
+                  "displayName": "Number of Installed Turbo Chargers",
                   "scale": {
                     "type": "categorical"
                   }
@@ -1464,6 +1486,9 @@
                   "whiskerEnd": {
                     "fieldName": "max(maximum_rotations_per_minute)"
                   },
+                  "axis": {
+                    "title": "Max. RPM Achieved"
+                  },
                   "scale": {
                     "type": "quantitative"
                   }
@@ -1473,7 +1498,7 @@
           },
           "position": {
             "x": 0,
-            "y": 56,
+            "y": 61,
             "width": 6,
             "height": 6
           }
@@ -1483,20 +1508,20 @@
             "name": "caec901b",
             "multilineTextboxSpec": {
               "lines": [
-                ""
+                "## Normalized Mutual Information Between Every Feature"
               ]
             }
           },
           "position": {
             "x": 0,
-            "y": 62,
+            "y": 67,
             "width": 12,
             "height": 1
           }
         },
         {
           "widget": {
-            "name": "ab4dba38",
+            "name": "nmi-heatmap",
             "queries": [
               {
                 "name": "main_query",
@@ -1522,6 +1547,10 @@
             ],
             "spec": {
               "version": 3,
+              "frame": {
+                "showTitle": true,
+                "title": "NMI Heatmap"
+              },
               "widgetType": "heatmap",
               "encodings": {
                 "x": {
@@ -1599,7 +1628,7 @@
           },
           "position": {
             "x": 0,
-            "y": 63,
+            "y": 68,
             "width": 12,
             "height": 15
           }
